@@ -3,8 +3,6 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import hoverSoundFile from '/public/sound/hoversound .mp3';
 
-const hoverSound = new Audio(hoverSoundFile); // L'objet Audio pour le son de survol sur les boutons 
-
 const Home: React.FC = () => {
 
   const titleRef = useRef<HTMLHeadingElement>(null); // Utilisation de gsap pour faire une animation de perspective au survol
@@ -37,25 +35,25 @@ const Home: React.FC = () => {
     }
   };
 
- return (
-  <div className="min-h-screen flex items-center bg-black p-8">
-    <div className="flex w-full justify-between items-center">
+return (
+  <div className="min-h-screen flex items-center bg-black p-6">
+    <div className="flex flex-col lg:flex-row w-full lg:justify-between lg:items-center">
 
       {/* Partie gauche */}
-      <div className="ml-20">
+      <div className="lg:ml-20">
         <h1
           ref={titleRef}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
-          className="text-[8rem] font-light text-white mb-20"
+          className="text-5xl lg:text-[8rem] font-light text-white mb-12 lg:mb-20"
         >
           VICTOR KURT
         </h1>
 
-        <div className="space-y-10 flex flex-col">
+        <div className="space-y-6 lg:space-y-10 flex flex-col">
           <Link
             to="/parcours"
-            className="text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
+            className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
             onMouseEnter={() => {
               const sound = new Audio(hoverSoundFile);
               sound.currentTime = 0;
@@ -67,7 +65,7 @@ const Home: React.FC = () => {
 
           <Link
             to="/atouts"
-            className="text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
+            className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
             onMouseEnter={() => {
               const sound = new Audio(hoverSoundFile);
               sound.currentTime = 0;
@@ -79,7 +77,7 @@ const Home: React.FC = () => {
 
           <Link
             to="/projets"
-            className="text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
+            className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
             onMouseEnter={() => {
               const sound = new Audio(hoverSoundFile);
               sound.currentTime = 0;
@@ -91,7 +89,7 @@ const Home: React.FC = () => {
 
           <Link
             to="/contact"
-            className="text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
+            className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
             onMouseEnter={() => {
               const sound = new Audio(hoverSoundFile);
               sound.currentTime = 0;
@@ -103,14 +101,15 @@ const Home: React.FC = () => {
         </div>
       </div>
 
+      {/* Image à droite */}
       <img
         src="/pictures/punk.jpg"
         alt="victor"
-        className="w-96 h-96 object-cover mr-20"
+        className="w-64 h-64 lg:w-96 lg:h-96 object-cover rounded-lg mt-12 lg:mt-0"
       />
     </div>
   </div>
-  );
+);
 };
 
 export default Home;
