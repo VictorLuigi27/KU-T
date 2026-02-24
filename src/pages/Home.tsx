@@ -45,24 +45,12 @@ return (
           ref={titleRef}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
-          className="text-5xl lg:text-[8rem] font-light text-white mb-12 lg:mb-20"
+          className="text-5xl lg:text-[8rem] font-light text-white mb-12 lg:mb-40"
         >
           VICTOR KURT
         </h1>
 
         <div className="space-y-6 lg:space-y-10 flex flex-col">
-          <Link
-            to="/parcours"
-            className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
-            onMouseEnter={() => {
-              const sound = new Audio(hoverSoundFile);
-              sound.currentTime = 0;
-              sound.play();
-            }}
-          >
-            Mon parcours
-          </Link>
-
           <Link
             to="/atouts"
             className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
@@ -72,7 +60,7 @@ return (
               sound.play();
             }}
           >
-            Mes Atouts
+            About
           </Link>
 
           <Link
@@ -84,7 +72,7 @@ return (
               sound.play();
             }}
           >
-            Mes Projets
+            Project
           </Link>
 
           <Link
@@ -105,7 +93,7 @@ return (
       <img
         src="/pictures/punk.jpg"
         alt="victor"
-        className="w-64 h-64 lg:w-96 lg:h-96 object-cover rounded-lg mt-12 lg:mt-0"
+        className="w-64 h-64 lg:w-90 lg:h-90 object-cover mt-12 lg:mt-50 lg:mr-5"
       />
     </div>
   </div>
