@@ -52,7 +52,7 @@ return (
 
         <div className="space-y-6 lg:space-y-10 flex flex-col">
           <Link
-            to="/atouts"
+            to="/about"
             className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
             onMouseEnter={() => {
               const sound = new Audio(hoverSoundFile);
