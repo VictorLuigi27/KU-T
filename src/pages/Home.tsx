@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import hoverSoundFile from "/sound/hoversound .mp3";
 import About from "./About";
 import Project from "./Project";
+import Contact from "./Contact";
 
 const Home: React.FC = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -45,7 +46,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white p-6">
+    <div className="min-h-screen flex flex-col text-white p-6">
 
       
       <section className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-20">
@@ -105,6 +106,11 @@ const Home: React.FC = () => {
       {/* Project */}
       <section>
         <Project />
+      </section>
+      
+      {/* Contact */}
+      <section>
+        <Contact />
       </section>
 
     </div>

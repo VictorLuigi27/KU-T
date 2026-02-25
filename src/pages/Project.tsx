@@ -25,7 +25,7 @@ const projects = [
 
 export default function ProjectGallery() {
   return (
-    <div className="min-h-screen bg-black p-10 flex flex-col items-center justify-center gap-16">
+    <div className="min-h-screen p-10 flex flex-col items-center justify-center gap-16">
       <h1 className="text-5xl lg:text-7xl text-white mb-16 text-center">
         PROJECTS
       </h1>
@@ -37,7 +37,8 @@ export default function ProjectGallery() {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-72 lg:w-100 lg:h-90 bg-indigo-950 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition transform"
+            className="w-72 lg:w-100 lg:h-90 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition transform"
+            style={{ backgroundColor: '#242423' }}
           >
             <img
               src={project.image}

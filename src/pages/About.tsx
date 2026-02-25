@@ -34,12 +34,12 @@ export default function About() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen">
       <h1 className="text-3xl lg:text-9xl flex items-center justify-center mt-20 mb-20 lg:mt-70 lg:mb-90">
         ABOUT ME
       </h1>
 
-      <div className="bloc b1 min-h-[60vh] bg-black p-8 lg:p-20">
+      <div className="bloc b1 min-h-[60vh] p-8 lg:p-20">
         <p className="text-base lg:text-lg text-left leading-relaxed">
           Je m’appelle Victor, développeur web spécialisé en front-end, avec une expérience en back-end. 
           Cette double compétence me permet d’être polyvalent, autonome et d’avoir une vision globale des projets, 
@@ -47,14 +47,14 @@ export default function About() {
         </p>
       </div>
 
-      <div className="bloc b1 min-h-[60vh] bg-black p-8 lg:p-20 mt-30">
+      <div className="bloc b1 min-h-[60vh] p-8 lg:p-20 mt-30">
         <p className="text-base lg:text-lg text-left leading-relaxed">
           Mon esprit est très créatif et orienté solution. Je propose régulièrement des idées de fonctionnalités et d’améliorations en pensant à l’ensemble du parcours utilisateur. 
           Je considère que le design ne se limite pas à l’apparence, mais qu’il influence profondément le comportement et l’émotion.
         </p>
       </div>
 
-      <div className="bloc b1 min-h-[60vh] bg-black flex flex-col items-center justify-center p-8 lg:p-20 mt-30">
+      <div className="bloc b1 min-h-[60vh] flex flex-col items-center justify-center p-8 lg:p-20 mt-30">
         <div className="max-w-3xl space-y-6 lg:space-y-10 text-left">
             <p className="text-base lg:text-lg leading-relaxed">
             Je suis constamment en quête d’évolution, aussi bien sur le plan technique que personnel. 
@@ -62,7 +62,7 @@ export default function About() {
             </p>
         </div>
 
-        <div className="bloc b1 min-h-[60vh] bg-black flex flex-col items-center justify-center p-8 lg:p-20 mt-30 lg:mt-90">
+        <div className="bloc b1 min-h-[60vh] flex flex-col items-center justify-center p-8 lg:p-20 mt-30 lg:mt-90">
         <div className="max-w-3xl space-y-6 lg:space-y-10 text-left">
             <p className="text-base lg:text-lg leading-relaxed">
             Lors de mes expériences précédentes, mon investissement et la qualité de mon travail ont été reconnus par plusieurs primes. 
