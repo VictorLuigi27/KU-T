@@ -35,7 +35,7 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <h1 className="text-3xl lg:text-9xl flex items-center justify-center mt-20 mb-20 lg:mt-70 lg:mb-70">
+      <h1 className="text-3xl lg:text-9xl flex items-center justify-center mt-20 mb-20 lg:mt-70 lg:mb-90">
         ABOUT ME
       </h1>
 
