@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import hoverSoundFile from "/sound/hoversound .mp3";
 import About from "./About";
+import Project from "./Project";
 
 const Home: React.FC = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -87,7 +88,7 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Image à droite en desktop seulement */}
+        
         <img
           src="/pictures/punk.jpg"
           alt="victor"
@@ -95,9 +96,15 @@ const Home: React.FC = () => {
         />
       </section>
 
-      {/* About section */}
+      {/* About */}
       <section>
         <About />
+      </section>
+
+
+      {/* Project */}
+      <section>
+        <Project />
       </section>
 
     </div>
