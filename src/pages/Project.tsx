@@ -1,7 +1,7 @@
 export default function Project() {
   return (
     <div>
-        <h1 className="text-2xl lg:text-5xl flex items-center justify-center mt-15 lg:mt-25">
+        <h1 className="text-3xl lg:text-9xl flex items-center justify-center mt-40 lg:mt-70 ">
             PROJECT
         </h1>
     </div>
