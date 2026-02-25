@@ -5,3 +5,25 @@
 body {
   font-family: 'JetBrains Mono', monospace;
 }
+
+/* Largeur */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Background */
+::-webkit-scrollbar-track {
+  background: #000; /* noir */
+}
+
+/* La scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+/* Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}

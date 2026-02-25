@@ -1,11 +1,11 @@
-import React from 'react';
-import { useRef } from 'react';
-import { Link } from 'react-router-dom';
-import hoverSoundFile from '/public/sound/hoversound .mp3';
+import React, { useRef } from "react";
+import { Link } from "react-router-dom";
+import hoverSoundFile from "/sound/hoversound .mp3";
+import About from "./About";
 
 const Home: React.FC = () => {
-
-  const titleRef = useRef<HTMLHeadingElement>(null); // Utilisation de gsap pour faire une animation de perspective au survol
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const hoverSound = useRef<HTMLAudioElement | null>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLHeadingElement>) => {
     const element = titleRef.current;
@@ -19,7 +19,7 @@ const Home: React.FC = () => {
     const centerY = rect.height / 2;
 
     const rotateX = ((y - centerY) / centerY) * -10;
-    const rotateY = ((x - centerX) / centerX) * 10; 
+    const rotateY = ((x - centerX) / centerX) * 10;
 
     element.style.transform = `
       perspective(1000px)
@@ -35,69 +35,73 @@ const Home: React.FC = () => {
     }
   };
 
-return (
-  <div className="min-h-screen flex items-center bg-black p-6">
-    <div className="flex flex-col lg:flex-row w-full lg:justify-between lg:items-center">
+  const playHoverSound = () => {
+    if (!hoverSound.current) {
+      hoverSound.current = new Audio(hoverSoundFile);
+    }
+    hoverSound.current.currentTime = 0;
+    hoverSound.current.play();
+  };
 
-      {/* Partie gauche */}
-      <div className="lg:ml-20">
-        <h1
-          ref={titleRef}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          className="text-5xl lg:text-[8rem] font-light text-white mb-12 lg:mb-40"
-        >
-          VICTOR KURT
-        </h1>
+  return (
+    <div className="min-h-screen flex flex-col bg-black text-white p-6">
 
-        <div className="space-y-6 lg:space-y-10 flex flex-col">
-          <Link
-            to="/about"
-            className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
-            onMouseEnter={() => {
-              const sound = new Audio(hoverSoundFile);
-              sound.currentTime = 0;
-              sound.play();
-            }}
+      
+      <section className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-20">
+
+        
+        <div className="flex flex-col items-start lg:mr-10">
+          <h1
+            ref={titleRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className="text-5xl lg:text-[8rem] lg:mt-25 font-light mb-12 transition-transform duration-200"
           >
-            About
-          </Link>
+            VICTOR KURT
+          </h1>
 
-          <Link
-            to="/projets"
-            className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
-            onMouseEnter={() => {
-              const sound = new Audio(hoverSoundFile);
-              sound.currentTime = 0;
-              sound.play();
-            }}
-          >
-            Project
-          </Link>
+          <div className="space-y-6 flex flex-col mb-12 lg:mt-10">
+            <Link
+              to="/about"
+              onMouseEnter={playHoverSound}
+              className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-all duration-300"
+            >
+              About
+            </Link>
 
-          <Link
-            to="/contact"
-            className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-transform duration-300 self-start"
-            onMouseEnter={() => {
-              const sound = new Audio(hoverSoundFile);
-              sound.currentTime = 0;
-              sound.play();
-            }}
-          >
-            Contact
-          </Link>
+            <Link
+              to="/projets"
+              onMouseEnter={playHoverSound}
+              className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-all duration-300"
+            >
+              Project
+            </Link>
+
+            <Link
+              to="/contact"
+              onMouseEnter={playHoverSound}
+              className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-all duration-300"
+            >
+              Contact
+            </Link>
+          </div>
         </div>
-      </div>
 
-      {/* Image à droite */}
-      <img
-        src="/pictures/punk.jpg"
-        alt="victor"
-        className="w-64 h-64 lg:w-90 lg:h-90 object-cover mt-12 lg:mt-50 lg:mr-5"
-      />
+        {/* Image à droite en desktop seulement */}
+        <img
+          src="/pictures/punk.jpg"
+          alt="victor"
+          className="w-64 h-64 lg:w-80 lg:h-80 object-cover mt-10 lg:mt-55"
+        />
+      </section>
+
+      {/* About section */}
+      <section>
+        <About />
+      </section>
+
     </div>
-  </div>
-);
+  );
 };
 
 export default Home;
