@@ -56,7 +56,7 @@ const Home: React.FC = () => {
             ref={titleRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="text-5xl lg:text-[8rem] lg:mt-25 font-light mb-12 transition-transform duration-200"
+            className="text-5xl lg:text-[8rem] lg:mt-50 lg:mb-35 font-light mb-12 transition-transform duration-200"
           >
             VICTOR KURT
           </h1>
@@ -92,7 +92,7 @@ const Home: React.FC = () => {
         <img
           src="/pictures/punk.jpg"
           alt="victor"
-          className="w-64 h-64 lg:w-80 lg:h-80 object-cover mt-10 lg:mt-55"
+          className="w-64 h-64 lg:w-90 lg:h-90 lg:mr-50 object-cover mt-10 lg:mt-90"
         />
       </section>
 

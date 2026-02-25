@@ -9,7 +9,6 @@ export default function About() {
     const blocs = gsap.utils.toArray<HTMLElement>(".bloc p");
 
     blocs.forEach((bloc) => {
-    if (bloc.id === "p1") return;
 
     gsap.fromTo(
       bloc,
@@ -28,31 +27,7 @@ export default function About() {
       }
     );
   });
-
-
-  const lastTwo = document.querySelectorAll<HTMLElement>(
-    ".bloc.b1:last-child p"
-  );
-
-  if (lastTwo.length === 2) {
-    gsap.fromTo(
-      lastTwo,
-      { y: 10, autoAlpha: 0, scale: 1 },
-      {
-        y: 0,
-        autoAlpha: 1,
-        scale: 1.05,
-        duration: 1,
-        scrollTrigger: {
-          trigger: lastTwo[0], 
-          end: "bottom 5%",
-          scrub: 0.5,
-        },
-      }
-    );
-  }
-
-    // cleanup
+    
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
@@ -85,14 +60,17 @@ export default function About() {
             Je suis constamment en quête d’évolution, aussi bien sur le plan technique que personnel. 
             Je cherche à développer toutes les compétences qui peuvent me permettre de progresser et d’avoir une vision toujours plus complète et performante de mon métier.
             </p>
+        </div>
 
-            <p id="p1" className="text-base lg:text-lg leading-relaxed">
+        <div className="bloc b1 min-h-[60vh] bg-black flex flex-col items-center justify-center p-8 lg:p-20 mt-30 lg:mt-90">
+        <div className="max-w-3xl space-y-6 lg:space-y-10 text-left">
+            <p className="text-base lg:text-lg leading-relaxed">
             Lors de mes expériences précédentes, mon investissement et la qualité de mon travail ont été reconnus par plusieurs primes. 
             Mon engagement a toujours été naturel : je m’implique pleinement dans les projets et je cherche constamment à apporter une réelle valeur à l’entreprise.
             </p>
         </div>
         </div>
-
+      </div>
     </div>
   );
 }
