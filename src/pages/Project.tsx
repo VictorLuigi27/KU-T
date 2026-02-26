@@ -10,9 +10,9 @@ const projects = [
   { 
     id: 2, 
     title: "Projet 2", 
-    tagline: "En cours ...",
-    image: "/pictures/projet1.jpg",
-    link: "https://example.com" 
+    tagline: "Un ancien portfolio, plus personnel, porté par la musique classique.",
+    image: "/pictures/projet2.jpg",
+    link: "https://victor-rosy.vercel.app/" 
   },
   { 
     id: 3, 
