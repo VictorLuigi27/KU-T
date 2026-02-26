@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
 import hoverSoundFile from "/sound/hoversound .mp3";
 import About from "./About";
 import Project from "./Project";
@@ -63,29 +62,29 @@ const Home: React.FC = () => {
           </h1>
 
           <div className="space-y-6 flex flex-col mb-12 lg:mt-10">
-            <Link
-              to="/about"
+            <a
+              href="#about"
               onMouseEnter={playHoverSound}
               className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-all duration-300"
             >
               About
-            </Link>
+            </a>
 
-            <Link
-              to="/projets"
+            <a
+              href="#projects"
               onMouseEnter={playHoverSound}
               className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-all duration-300"
             >
               Project
-            </Link>
+            </a>
 
-            <Link
-              to="/contact"
+            <a
+              href="#contact"
               onMouseEnter={playHoverSound}
               className="text-2xl lg:text-4xl text-gray-300 hover:text-white hover:translate-x-5 transition-all duration-300"
             >
               Contact
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -98,20 +97,19 @@ const Home: React.FC = () => {
       </section>
 
       {/* About */}
-      <section>
-        <About />
-      </section>
+        <section id="about">
+          <About />
+        </section>
 
+        {/* Project */}
+        <section id="projects">
+          <Project />
+        </section>
 
-      {/* Project */}
-      <section>
-        <Project />
-      </section>
-      
-      {/* Contact */}
-      <section>
-        <Contact />
-      </section>
+        {/* Contact */}
+        <section id="contact">
+          <Contact />
+        </section>
 
     </div>
   );
